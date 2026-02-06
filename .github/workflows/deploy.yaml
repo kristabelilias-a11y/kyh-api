@@ -25,7 +25,7 @@ jobs:
         run: dotnet build -c Release --no-restore
 
       - name: Publish
-        run: dotnet publish -c Release -r linux-x64 --self-contained true -p:UseAppHost=false -o publish
+        run: dotnet publish ./kyh-api.csproj -c Release -r linux-x64 --self-contained true -p:UseAppHost=true -o publish
 
       - name: Create deployment package
         run: |
