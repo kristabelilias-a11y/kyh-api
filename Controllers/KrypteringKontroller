@@ -1,0 +1,24 @@
+using Microsoft.AspNetCore.Mvc;
+using kyhapi.Models;
+using kyhapi.Services;
+
+namespace kyhapi.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+public class CryptoController : ControllerBase
+{
+    [HttpPost("encrypt")]
+    public IActionResult Encrypt([FromBody] CryptoRequest req)
+    {
+        var result = CaesarChiffer.Encrypt(req.Text, req.Shift);
+        return Ok(new { original = req.Text, shift = req.Shift, encrypted = result });
+    }
+
+    [HttpPost("decrypt")]
+    public IActionResult Decrypt([FromBody] CryptoRequest req)
+    {
+        var result = CaesarChiffer.Decrypt(req.Text, req.Shift);
+        return Ok(new { original = req.Text, shift = req.Shift, decrypted = result });
+    }
+}

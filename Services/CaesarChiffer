@@ -1,0 +1,27 @@
+namespace kyhapi.Services;
+
+public static class CaesarChiffer
+{
+    public static string Encrypt(string input, int shift)
+    {
+        if (string.IsNullOrEmpty(input)) return input;
+
+        shift %= 26;
+        return new string(input.Select(ch => ShiftChar(ch, shift)).ToArray());
+    }
+
+    public static string Decrypt(string input, int shift)
+    {
+        return Encrypt(input, 26 - (shift % 26));
+    }
+
+    private static char ShiftChar(char ch, int shift)
+    {
+        if (!char.IsLetter(ch)) return ch;
+
+        char offset = char.IsUpper(ch) ? 'A' : 'a';
+        int alphaIndex = ch - offset;
+        int shifted = (alphaIndex + shift) % 26;
+        return (char)(offset + shifted);
+    }
+}
