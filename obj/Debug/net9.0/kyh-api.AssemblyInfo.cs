@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("kyh-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bd6052215676cac403f6778ff4696c5e2ca32216")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dbdd6302a007f6a2ad8b83cc32584e2734affc08")]
 [assembly: System.Reflection.AssemblyProductAttribute("kyh-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("kyh-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
